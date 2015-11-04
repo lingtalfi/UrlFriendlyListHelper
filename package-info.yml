@@ -1,0 +1,5 @@
+dependencies:
+    - git::/lingtalfi/Bat:1.12  
+    - git::/lingtalfi/JQuery:2.1.4  
+ACPCompliantRanges:
+    - *
