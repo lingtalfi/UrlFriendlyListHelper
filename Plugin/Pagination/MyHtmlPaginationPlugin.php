@@ -17,7 +17,6 @@ use UrlFriendlyListHelper\Plugin\BaseListHelperPlugin;
 class MyHtmlPaginationPlugin extends BaseListHelperPlugin
 {
 
-    private $nbRows;
     private $width;
     private $activeLinkAttr;
 
@@ -51,28 +50,29 @@ class MyHtmlPaginationPlugin extends BaseListHelperPlugin
             $currentPage = $nbTotalPages;
         }
 
-        if ($nbTotalPages > $this->width) {
-            $nbTotalPages = $this->width;
-        }
-
-
         $concreteName = $this->getConcreteName('page');
 
-        for ($i = 1; $i <= $nbTotalPages; $i++) {
-            if (1 !== $i) {
-                $s .= ' | ';
+
+        $s .= $this->getLink($concreteName, 1, false);
+        $start = $currentPage - (int)floor($this->width / 2);
+        $end = $start + $this->width;
+        if ($nbTotalPages > 0) {
+            $s .= ' ... ';
+
+            for ($i = $start; $i < $end; $i++) {
+                if ($i > 1 && $i < $nbTotalPages) {
+
+                    if ($start !== $i) {
+                        $s .= ' | ';
+                    }
+                    $s .= $this->getLink($concreteName, $i, ($i === $currentPage));
+                }
             }
-
-
-            $sActive = '';
-            if ($i === $currentPage) {
-                $sActive = StringTool::htmlAttributes($this->activeLinkAttr);
-            }
-
-            $href = $this->listHelper->getRouter()->getUrl([$concreteName => $i]);
-
-            $s .= '<a href="' . htmlspecialchars($href) . '"' . $sActive . '>' . $i . '</a>';
+            $s .= ' ... ';
+            $s .= $this->getLink($concreteName, $nbTotalPages, false);
         }
+
+
         return $s;
     }
 
@@ -103,5 +103,19 @@ class MyHtmlPaginationPlugin extends BaseListHelperPlugin
         return $this;
     }
 
+    //------------------------------------------------------------------------------/
+    // 
+    //------------------------------------------------------------------------------/
+    private function getLink($concreteName, $i, $isActive)
+    {
+        $sActive = '';
+        if (true === $isActive) {
+            $sActive = StringTool::htmlAttributes($this->activeLinkAttr);
+        }
+
+        $href = $this->listHelper->getRouter()->getUrl([$concreteName => $i]);
+
+        return '<a href="' . htmlspecialchars($href) . '"' . $sActive . '>' . $i . '</a>';
+    }
 
 }

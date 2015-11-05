@@ -323,6 +323,7 @@ echo $pagination->renderHtml();
 
 ### Multiple lists complete example
 
+
 ```php
 <!DOCTYPE html>
 <html>
@@ -561,6 +562,173 @@ echo $pagination2->renderHtml();
 ```
 
 
+
+### Multiple lists complete example using mysql pdo items generator
+
+```php
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <!--<script src="http://localcdn/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <title>Html page</title>
+</head>
+<body>
+<?php
+
+
+use QuickPdo\QuickPdo;
+use UrlFriendlyListHelper\Displayer\PuppyBaseDisplayer;
+use UrlFriendlyListHelper\ItemGenerator\MysqlPdoItemGenerator;
+use UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationArrayItemGeneratorHelper;
+use UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationMysqlPdoItemGeneratorHelper;
+use UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSearchMysqlPdoItemGeneratorHelper;
+use UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSortMysqlPdoItemGeneratorHelper;
+use UrlFriendlyListHelper\ListHelper\AuthorListHelper;
+use UrlFriendlyListHelper\Plugin\Pagination\MyHtmlPaginationPlugin;
+use UrlFriendlyListHelper\Plugin\Search\MySearchPlugin;
+use UrlFriendlyListHelper\Plugin\Sort\MySortPlugin;
+use UrlFriendlyListHelper\Router\AuthorListRouter;
+
+require_once "bigbang.php";
+
+
+QuickPdo::setConnection(
+    'mysql:host=localhost;dbname=sketch',
+    'root',
+    'root',
+    array(
+        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'",
+        PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+    )
+);
+
+
+$itemGenerator = MysqlPdoItemGenerator::create()
+    ->setCountRawQuery('select count(*) as count from sketch.ideas where active=1')
+    ->setRawQuery('select * from sketch.ideas where active=1');
+?>
+<style>
+    .active {
+        font-size: 20px;
+    }
+</style>
+<?php
+
+
+$nbItemsPerPage = 3;
+$pagination = MyHtmlPaginationPlugin::create()
+    ->setNbItemsPerPage($nbItemsPerPage)
+    ->setGeneratorHelper(OnePaginationMysqlPdoItemGeneratorHelper::create());
+
+$sort = MySortPlugin::create()
+    ->setSelectEntries([
+        'name_asc' => ['name asc', 'the_name', 'asc'],
+        'name_desc' => ['name desc', 'the_name', 'desc'],
+        'active_asc' => ['active asc', 'active', 'asc'],
+        'active_desc' => ['active desc', 'active', 'desc'],
+    ])
+    ->setGeneratorHelper(OneSortMysqlPdoItemGeneratorHelper::create())
+    ->setDefaultSortId('name_asc');
+$search = MySearchPlugin::create()->setGeneratorHelper(OneSearchMysqlPdoItemGeneratorHelper::create()->setSearchFields([
+    'the_name',
+    'description',
+]));
+
+
+// ROUTER
+//------------------------------------------------------------------------------/
+$router = AuthorListRouter::create()
+    ->setListParametersExtractor(function () {
+        $listParams = $_GET;
+        return $listParams;
+    })
+    ->setUrlGenerator(function (array $listParams) {
+        $curParams = array_replace($_GET, $listParams);
+        $uri = explode('?', $_SERVER['REQUEST_URI'])[0];
+        return $uri . '?' . http_build_query($curParams);
+    })
+    ->start();
+
+
+// HELPER LIST 
+//------------------------------------------------------------------------------/
+$listHelper = AuthorListHelper::create()
+    ->setItemGenerator($itemGenerator)
+    ->setRouter($router)
+    ->registerPlugin($search)
+    ->registerPlugin($sort)
+    ->registerPlugin($pagination)
+;
+
+$listHelper->start();
+
+
+// ITEM GENERATION
+//------------------------------------------------------------------------------/
+$listRows = $itemGenerator->getItems();
+echo $search->renderHtml();
+echo '<hr>';
+echo $sort->renderHtml();
+echo '<hr>';
+echo PuppyBaseDisplayer::create()->renderHtml($listRows);
+echo $pagination->renderHtml();
+
+
+//------------------------------------------------------------------------------/
+// MULTIPLE LIST
+//------------------------------------------------------------------------------/
+$itemGenerator2 = MysqlPdoItemGenerator::create()
+    ->setCountRawQuery('select count(*) as count from sketch.ideas')
+    ->setRawQuery('select * from sketch.ideas');
+$pagination2 = MyHtmlPaginationPlugin::create()
+    ->setNbItemsPerPage($nbItemsPerPage)
+    ->setGeneratorHelper(OnePaginationMysqlPdoItemGeneratorHelper::create());
+$sort2 = MySortPlugin::create()
+    ->setSelectEntries([
+        'name_asc' => ['name asc', 'the_name', 'asc'],
+        'name_desc' => ['name desc', 'the_name', 'desc'],
+        'active_asc' => ['active asc', 'active', 'asc'],
+        'active_desc' => ['active desc', 'active', 'desc'],
+    ])
+    ->setGeneratorHelper(OneSortMysqlPdoItemGeneratorHelper::create())
+    ->setDefaultSortId('name_asc');
+$search2 = MySearchPlugin::create()->setGeneratorHelper(OneSearchMysqlPdoItemGeneratorHelper::create()->setSearchFields([
+    'the_name',
+    'description',
+]));
+// HELPER LIST 
+//------------------------------------------------------------------------------/
+$listHelper2 = AuthorListHelper::create()
+    ->setItemGenerator($itemGenerator2)
+    ->setRouter($router)
+    ->registerPlugin($search2)
+    ->registerPlugin($sort2)
+    ->registerPlugin($pagination2);
+
+$listHelper2->start();
+
+
+// ITEM GENERATION
+//------------------------------------------------------------------------------/
+$listRows = $itemGenerator2->getItems();
+echo $search2->renderHtml();
+echo '<hr>';
+echo $sort2->renderHtml();
+echo '<hr>';
+echo PuppyBaseDisplayer::create()->renderHtml($listRows);
+echo $pagination2->renderHtml();
+
+
+?>
+</body>
+</html>
+```
+
+
+
+
 How does it work?
 ---------------------
 
@@ -586,6 +754,12 @@ Dependencies
 History Log
 ------------------
     
+- 1.1.0 -- 2015-11-05
+
+    - add Mysql Pdo Items Generator
+    - update MyHtmlPaginationPlugin
+        
+        
 - 1.0.0 -- 2015-11-04
 
     - initial commit
