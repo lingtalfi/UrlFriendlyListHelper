@@ -563,7 +563,7 @@ echo $pagination2->renderHtml();
 
 
 
-### Multiple lists complete example using mysql pdo items generator
+### Multiple lists complete example using Mysql Pdo Items Generator
 
 ```php
 <!DOCTYPE html>
@@ -747,6 +747,7 @@ Dependencies
 
 - [lingtalfi/Bat 1.12](https://github.com/lingtalfi/Bat)
 - [lingtalfi/JQuery 2.1.4](https://github.com/lingtalfi/JQuery)
+- [lingtalfi/QuickPdo 1.0.0](https://github.com/lingtalfi/QuickPdo): if you use MysqlPdoItemGenerator
 
 
 
