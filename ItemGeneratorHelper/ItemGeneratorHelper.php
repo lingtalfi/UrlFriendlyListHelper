@@ -1,11 +1,11 @@
 <?php
 
-namespace UrlFriendlyListHelper\ItemGeneratorHelper;
+namespace Ling\UrlFriendlyListHelper\ItemGeneratorHelper;
 
 /*
  * LingTalfi 2015-11-04
  */
-use UrlFriendlyListHelper\Plugin\ListHelperPluginInterface;
+use Ling\UrlFriendlyListHelper\Plugin\ListHelperPluginInterface;
 
 abstract class ItemGeneratorHelper implements ItemGeneratorHelperInterface
 {

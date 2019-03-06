@@ -1,6 +1,6 @@
 <?php
 
-namespace UrlFriendlyListHelper\Plugin\Sort;
+namespace Ling\UrlFriendlyListHelper\Plugin\Sort;
 
 /*
  * LingTalfi 2015-11-03
@@ -18,8 +18,8 @@ namespace UrlFriendlyListHelper\Plugin\Sort;
  */
 
 
-use Bat\StringTool;
-use UrlFriendlyListHelper\Plugin\BaseListHelperPlugin;
+use Ling\Bat\StringTool;
+use Ling\UrlFriendlyListHelper\Plugin\BaseListHelperPlugin;
 
 class MySortPlugin extends BaseListHelperPlugin
 {

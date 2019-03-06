@@ -1,6 +1,6 @@
 <?php
 
-namespace UrlFriendlyListHelper\ListHelper;
+namespace Ling\UrlFriendlyListHelper\ListHelper;
 
 /*
  * LingTalfi 2015-11-02
@@ -10,10 +10,10 @@ namespace UrlFriendlyListHelper\ListHelper;
  * https://github.com/lingtalfi/UrlFriendlyListHelper/blob/master/doc/convention/convention.list-parameter-naming.one.md
  * 
  */
-use UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
-use UrlFriendlyListHelper\Plugin\ListHelperPluginInterface;
-use UrlFriendlyListHelper\Router\ListRouterInterface;
-use UrlFriendlyListHelper\Tool\UrlFriendlyListHelperTool;
+use Ling\UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
+use Ling\UrlFriendlyListHelper\Plugin\ListHelperPluginInterface;
+use Ling\UrlFriendlyListHelper\Router\ListRouterInterface;
+use Ling\UrlFriendlyListHelper\Tool\UrlFriendlyListHelperTool;
 
 class AuthorListHelper implements ListHelperInterface
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace UrlFriendlyListHelper\ItemGeneratorHelper\One;
+namespace Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One;
 
 /*
  * LingTalfi 2015-11-05
  */
 
-use UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
-use UrlFriendlyListHelper\ItemGeneratorHelper\ItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\ItemGeneratorHelper;
 
 class OneSortMysqlPdoItemGeneratorHelper extends ItemGeneratorHelper
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace UrlFriendlyListHelper\ItemGenerator;
+namespace Ling\UrlFriendlyListHelper\ItemGenerator;
 
 /*
  * LingTalfi 2015-11-02
  * This object relies on convention
  */
-use UrlFriendlyListHelper\ItemGeneratorHelper\FilteringItemGeneratorHelperInterface;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\FilteringItemGeneratorHelperInterface;
 
 class ArrayItemGenerator extends ItemGenerator
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace UrlFriendlyListHelper\Displayer;
+namespace Ling\UrlFriendlyListHelper\Displayer;
 
 /*
  * LingTalfi 2015-11-01

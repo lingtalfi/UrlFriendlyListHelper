@@ -1,14 +1,14 @@
 <?php
 
-namespace UrlFriendlyListHelper\ItemGeneratorHelper\One;
+namespace Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One;
 
 /*
  * LingTalfi 2015-11-04
  */
 
-use UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
-use UrlFriendlyListHelper\ItemGeneratorHelper\FilteringItemGeneratorHelperInterface;
-use UrlFriendlyListHelper\ItemGeneratorHelper\ItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\FilteringItemGeneratorHelperInterface;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\ItemGeneratorHelper;
 
 class OneSearchArrayItemGeneratorHelper extends ItemGeneratorHelper implements FilteringItemGeneratorHelperInterface
 {

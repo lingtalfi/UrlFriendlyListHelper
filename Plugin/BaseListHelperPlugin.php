@@ -1,14 +1,14 @@
 <?php
 
-namespace UrlFriendlyListHelper\Plugin;
+namespace Ling\UrlFriendlyListHelper\Plugin;
 
 /*
  * LingTalfi 2015-11-01
  */
-use UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
-use UrlFriendlyListHelper\ItemGeneratorHelper\ItemGeneratorHelperInterface;
-use UrlFriendlyListHelper\ListHelper\ListHelperInterface;
-use UrlFriendlyListHelper\Tool\UrlFriendlyListHelperTool;
+use Ling\UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\ItemGeneratorHelperInterface;
+use Ling\UrlFriendlyListHelper\ListHelper\ListHelperInterface;
+use Ling\UrlFriendlyListHelper\Tool\UrlFriendlyListHelperTool;
 
 
 abstract class BaseListHelperPlugin implements ListHelperPluginInterface

@@ -1,6 +1,6 @@
 <?php
 
-namespace UrlFriendlyListHelper\ItemGeneratorHelper;
+namespace Ling\UrlFriendlyListHelper\ItemGeneratorHelper;
 
 /*
  * LingTalfi 2015-11-04

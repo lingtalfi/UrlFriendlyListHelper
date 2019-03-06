@@ -1,14 +1,14 @@
 <?php
 
-namespace UrlFriendlyListHelper\Plugin\Search;
+namespace Ling\UrlFriendlyListHelper\Plugin\Search;
 
 /*
  * LingTalfi 2015-11-04
  */
 
 
-use Bat\StringTool;
-use UrlFriendlyListHelper\Plugin\BaseListHelperPlugin;
+use Ling\Bat\StringTool;
+use Ling\UrlFriendlyListHelper\Plugin\BaseListHelperPlugin;
 
 class MySearchPlugin extends BaseListHelperPlugin
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace UrlFriendlyListHelper\ListHelper;
+namespace Ling\UrlFriendlyListHelper\ListHelper;
 
 /*
  * LingTalfi 2015-11-02
  * 
  */
-use UrlFriendlyListHelper\Router\ListRouterInterface;
+use Ling\UrlFriendlyListHelper\Router\ListRouterInterface;
 
 interface ListHelperInterface
 {

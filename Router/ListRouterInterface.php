@@ -1,6 +1,6 @@
 <?php
 
-namespace UrlFriendlyListHelper\Router;
+namespace Ling\UrlFriendlyListHelper\Router;
 
 /*
  * LingTalfi 2015-11-01

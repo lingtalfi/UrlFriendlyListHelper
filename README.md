@@ -14,7 +14,7 @@ Install
 ==========
 Using the [uni](https://github.com/lingtalfi/universe-naive-importer) command.
 ```bash
-uni import UrlFriendlyListHelper
+uni import Ling/UrlFriendlyListHelper
 ```
 
 
@@ -52,10 +52,10 @@ How to use?
 <?php
 
 
-use UrlFriendlyListHelper\Displayer\PuppyBaseDisplayer;
-use UrlFriendlyListHelper\ItemGenerator\ArrayItemGenerator;
-use UrlFriendlyListHelper\ListHelper\AuthorListHelper;
-use UrlFriendlyListHelper\Router\AuthorListRouter;
+use Ling\UrlFriendlyListHelper\Displayer\PuppyBaseDisplayer;
+use Ling\UrlFriendlyListHelper\ItemGenerator\ArrayItemGenerator;
+use Ling\UrlFriendlyListHelper\ListHelper\AuthorListHelper;
+use Ling\UrlFriendlyListHelper\Router\AuthorListRouter;
 
 require_once "bigbang.php";
 
@@ -189,12 +189,12 @@ echo PuppyBaseDisplayer::create()->renderHtml($listRows);
 <?php
 
 
-use UrlFriendlyListHelper\Displayer\PuppyBaseDisplayer;
-use UrlFriendlyListHelper\ItemGenerator\ArrayItemGenerator;
-use UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationArrayItemGeneratorHelper;
-use UrlFriendlyListHelper\ListHelper\AuthorListHelper;
-use UrlFriendlyListHelper\Plugin\Pagination\MyHtmlPaginationPlugin;
-use UrlFriendlyListHelper\Router\AuthorListRouter;
+use Ling\UrlFriendlyListHelper\Displayer\PuppyBaseDisplayer;
+use Ling\UrlFriendlyListHelper\ItemGenerator\ArrayItemGenerator;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationArrayItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ListHelper\AuthorListHelper;
+use Ling\UrlFriendlyListHelper\Plugin\Pagination\MyHtmlPaginationPlugin;
+use Ling\UrlFriendlyListHelper\Router\AuthorListRouter;
 
 require_once "bigbang.php";
 
@@ -346,16 +346,16 @@ echo $pagination->renderHtml();
 <?php
 
 
-use UrlFriendlyListHelper\ItemGenerator\ArrayItemGenerator;
-use UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationArrayItemGeneratorHelper;
-use UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSearchArrayItemGeneratorHelper;
-use UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSortArrayItemGeneratorHelper;
-use UrlFriendlyListHelper\ListHelper\AuthorListHelper;
-use UrlFriendlyListHelper\Plugin\Pagination\MyHtmlPaginationPlugin;
-use UrlFriendlyListHelper\Plugin\Search\MySearchPlugin;
-use UrlFriendlyListHelper\Plugin\Sort\MySortPlugin;
-use UrlFriendlyListHelper\Displayer\PuppyBaseDisplayer;
-use UrlFriendlyListHelper\Router\AuthorListRouter;
+use Ling\UrlFriendlyListHelper\ItemGenerator\ArrayItemGenerator;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationArrayItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSearchArrayItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSortArrayItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ListHelper\AuthorListHelper;
+use Ling\UrlFriendlyListHelper\Plugin\Pagination\MyHtmlPaginationPlugin;
+use Ling\UrlFriendlyListHelper\Plugin\Search\MySearchPlugin;
+use Ling\UrlFriendlyListHelper\Plugin\Sort\MySortPlugin;
+use Ling\UrlFriendlyListHelper\Displayer\PuppyBaseDisplayer;
+use Ling\UrlFriendlyListHelper\Router\AuthorListRouter;
 
 require_once "bigbang.php";
 
@@ -587,18 +587,18 @@ echo $pagination2->renderHtml();
 <?php
 
 
-use QuickPdo\QuickPdo;
-use UrlFriendlyListHelper\Displayer\PuppyBaseDisplayer;
-use UrlFriendlyListHelper\ItemGenerator\MysqlPdoItemGenerator;
-use UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationArrayItemGeneratorHelper;
-use UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationMysqlPdoItemGeneratorHelper;
-use UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSearchMysqlPdoItemGeneratorHelper;
-use UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSortMysqlPdoItemGeneratorHelper;
-use UrlFriendlyListHelper\ListHelper\AuthorListHelper;
-use UrlFriendlyListHelper\Plugin\Pagination\MyHtmlPaginationPlugin;
-use UrlFriendlyListHelper\Plugin\Search\MySearchPlugin;
-use UrlFriendlyListHelper\Plugin\Sort\MySortPlugin;
-use UrlFriendlyListHelper\Router\AuthorListRouter;
+use Ling\QuickPdo\QuickPdo;
+use Ling\UrlFriendlyListHelper\Displayer\PuppyBaseDisplayer;
+use Ling\UrlFriendlyListHelper\ItemGenerator\MysqlPdoItemGenerator;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationArrayItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One\OnePaginationMysqlPdoItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSearchMysqlPdoItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\One\OneSortMysqlPdoItemGeneratorHelper;
+use Ling\UrlFriendlyListHelper\ListHelper\AuthorListHelper;
+use Ling\UrlFriendlyListHelper\Plugin\Pagination\MyHtmlPaginationPlugin;
+use Ling\UrlFriendlyListHelper\Plugin\Search\MySearchPlugin;
+use Ling\UrlFriendlyListHelper\Plugin\Sort\MySortPlugin;
+use Ling\UrlFriendlyListHelper\Router\AuthorListRouter;
 
 require_once "bigbang.php";
 

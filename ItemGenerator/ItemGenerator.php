@@ -1,6 +1,6 @@
 <?php
 
-namespace UrlFriendlyListHelper\ItemGenerator;
+namespace Ling\UrlFriendlyListHelper\ItemGenerator;
 
 /*
  * LingTalfi 2015-11-02
@@ -10,8 +10,8 @@ namespace UrlFriendlyListHelper\ItemGenerator;
  *      We have getParameter and getParameterOrDefault methods.
  *      They are different, the primer is an assumption, the latter is a question.
  */
-use UrlFriendlyListHelper\ItemGeneratorHelper\ItemGeneratorHelperInterface;
-use UrlFriendlyListHelper\ListHelper\ListHelperInterface;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\ItemGeneratorHelperInterface;
+use Ling\UrlFriendlyListHelper\ListHelper\ListHelperInterface;
 
 abstract class ItemGenerator implements ItemGeneratorInterface
 {

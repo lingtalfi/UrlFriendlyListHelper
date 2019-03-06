@@ -1,12 +1,12 @@
 <?php
 
-namespace UrlFriendlyListHelper\ItemGenerator;
+namespace Ling\UrlFriendlyListHelper\ItemGenerator;
 
 /*
  * LingTalfi 2015-11-04
  */
-use QuickPdo\QuickPdo;
-use UrlFriendlyListHelper\ItemGeneratorHelper\FilteringItemGeneratorHelperInterface;
+use Ling\QuickPdo\QuickPdo;
+use Ling\UrlFriendlyListHelper\ItemGeneratorHelper\FilteringItemGeneratorHelperInterface;
 
 class MysqlPdoItemGenerator extends ItemGenerator
 {

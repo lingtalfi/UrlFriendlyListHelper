@@ -1,6 +1,6 @@
 <?php
 
-namespace UrlFriendlyListHelper\Plugin\Pagination;
+namespace Ling\UrlFriendlyListHelper\Plugin\Pagination;
 
 /*
  * LingTalfi 2015-11-01
@@ -10,9 +10,9 @@ namespace UrlFriendlyListHelper\Plugin\Pagination;
  */
 
 
-use Bat\StringTool;
-use UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
-use UrlFriendlyListHelper\Plugin\BaseListHelperPlugin;
+use Ling\Bat\StringTool;
+use Ling\UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
+use Ling\UrlFriendlyListHelper\Plugin\BaseListHelperPlugin;
 
 class MyHtmlPaginationPlugin extends BaseListHelperPlugin
 {

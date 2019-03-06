@@ -1,6 +1,6 @@
 <?php
 
-namespace UrlFriendlyListHelper\ItemGeneratorHelper;
+namespace Ling\UrlFriendlyListHelper\ItemGeneratorHelper;
 
 /*
  * LingTalfi 2015-11-04
@@ -9,8 +9,8 @@ namespace UrlFriendlyListHelper\ItemGeneratorHelper;
  *
  * 
  */
-use UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
-use UrlFriendlyListHelper\Plugin\ListHelperPluginInterface;
+use Ling\UrlFriendlyListHelper\ItemGenerator\ItemGeneratorInterface;
+use Ling\UrlFriendlyListHelper\Plugin\ListHelperPluginInterface;
 
 interface ItemGeneratorHelperInterface
 {

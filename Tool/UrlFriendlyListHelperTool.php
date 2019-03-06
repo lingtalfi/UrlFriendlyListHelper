@@ -1,6 +1,6 @@
 <?php
 
-namespace UrlFriendlyListHelper\Tool;
+namespace Ling\UrlFriendlyListHelper\Tool;
 
 /*
  * LingTalfi 2015-11-04
